@@ -5,7 +5,8 @@ import React from "react";
 import About from "../screens/About";
 import Home from "../screens/Home";
 import ReviewDetail from "../screens/ReviewDetail";
-import {Ionicons} from "@expo/vector-icons"
+import { Ionicons } from "@expo/vector-icons";
+import Header from "./Header";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -15,26 +16,32 @@ function nav({ navigation }) {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: "#95187d" },
-        headerTintColor: "#fff",
+        headerTintColor: "#FFF"
       }}
     >
       <Stack.Screen
         name="home"
         component={Home}
         options={{
-          title: "GameZone",
+          headerTitle: (props) => <Header {...props} title="GameZone" />,
           headerLeft: () => (
             <Ionicons
               name="ios-menu-outline"
               size={25}
               color="#fff"
               onPress={() => navigation.toggleDrawer()}
-              style={{marginHorizontal: "11px"}}
+              style={{ marginHorizontal: "11px" }}
             />
           ),
         }}
       />
-      <Stack.Screen name="Review Detail" component={ReviewDetail} />
+      <Stack.Screen
+        name="Review Detail"
+        component={ReviewDetail}
+        options={{
+          headerTitle: (props) => <Header {...props} title="Review Detail" />,
+        }}
+      />
     </Stack.Navigator>
   );
 }

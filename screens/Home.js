@@ -10,6 +10,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import Card from "../shared/Card";
 import { globalStyles } from "../styles/global";
+import ReviewForm from "./ReviewForm";
 
 function Home({ navigation }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -39,12 +40,12 @@ function Home({ navigation }) {
         <MaterialIcons
           name="close"
           size={24}
-          style={{ ...styles.modalToggle, ...styles.modalClose }}
+          style={[styles.modalToggle, styles.modalClose]}
           onPress={() => setModalOpen(false)}
         />
 
         <View style={styles.modalContent}>
-          <Text>Hello</Text>
+          <ReviewForm />
         </View>
       </Modal>
       <MaterialIcons
@@ -71,14 +72,14 @@ function Home({ navigation }) {
 
 const styles = StyleSheet.create({
   modalToggle: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 10,
     borderWidth: 1,
-    borderColor: "#d8d8d8",
+    borderColor: '#f2f2f2',
     padding: 10,
     borderRadius: 10,
-    alignSelf: "center",
+    alignSelf: 'center',
   },
   modalClose: {
     marginTop: 20,
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     flex: 1,
-  },
+  }
 });
 
 export default Home;
