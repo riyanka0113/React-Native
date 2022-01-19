@@ -6,6 +6,7 @@ import { globalStyles } from "../styles/global";
 
 function ReviewDetail({ route }) {
   const { title, rating, body } = route.params;
+  console.log(rating,"rating info");
   return (
     <View style={globalStyles.container}>
       <Card>

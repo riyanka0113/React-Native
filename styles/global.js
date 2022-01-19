@@ -21,6 +21,19 @@ export const globalStyles = StyleSheet.create({
     fontSize: 18,
     borderRadius: 6,
   },
+  error: {
+    color: "red",
+    marginVertical: 10,
+    fontWeight: "bold",
+  },
+  button : {
+    paddingVertical: 14,
+    paddingHorizontal: 10,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    fontSize: 16,
+    textAlign: 'center'
+  }
 });
 
 // export const images = {
